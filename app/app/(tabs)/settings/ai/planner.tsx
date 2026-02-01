@@ -315,7 +315,7 @@ function ProPrompt() {
     return (
       <SurfaceText>
         Unfortunately the AI planner is not available on the web version. Please
-        download LiftLog for iOS or Android.
+        download CthulhuFit for iOS or Android.
       </SurfaceText>
     );
   }

@@ -123,7 +123,7 @@ export function WelcomeWizard() {
           {t('onboarding.open_source.body')}
         </Text>
         <Button
-          onPress={() => openUrl('https://github.com/LiamMorrow/LiftLog')}
+          onPress={() => openUrl('https://github.com/Thesuperteacher/CthulhuFit')}
         >
           {t('onboarding.open_source.button')}
         </Button>

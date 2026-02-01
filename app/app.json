@@ -25,14 +25,6 @@
           "launchMode": "most-recent"
         }
       ],
-      [
-        "@sentry/react-native/expo",
-        {
-          "url": "https://sentry.io/",
-          "project": "app",
-          "organization": "liftlog"
-        }
-      ],
       "expo-localization",
       [
         "react-native-edge-to-edge",
@@ -42,34 +34,17 @@
             "enforceNavigationBarContrast": false
           }
         }
-      ],
-      "@sentry/react-native"
+      ]
     ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
     },
-    "scheme": "liftlog",
+    "scheme": "cthulhufit",
     "android": {
-      "package": "com.limajuice.liftlog",
+      "package": "com.thesuperteacher.cthulhufit",
       "permissions": [
         "com.android.vending.BILLING"
-      ],
-      "intentFilters": [
-        {
-          "action": "VIEW",
-          "autoVerify": true,
-          "data": [
-            {
-              "scheme": "https",
-              "host": "app.liftlog.online"
-            }
-          ],
-          "category": [
-            "BROWSABLE",
-            "DEFAULT"
-          ]
-        }
       ],
       "adaptiveIcon": {
         "backgroundColor": "#dfedda",
@@ -78,10 +53,7 @@
       }
     },
     "ios": {
-      "bundleIdentifier": "com.limajuice.liftlog",
-      "associatedDomains": [
-        "applinks:app.liftlog.online"
-      ],
+      "bundleIdentifier": "com.thesuperteacher.cthulhufit",
       "supportsTablet": true,
       "infoPlist": {
         "UIViewControllerBasedStatusBarAppearance": true,

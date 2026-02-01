@@ -24,7 +24,7 @@ export default function Settings() {
     Application.nativeBuildVersion ??
     'Unknown';
 
-  const bugReportUrl = `https://github.com/LiamMorrow/LiftLog/issues/new?assignees=&labels=bug&projects=&template=bug_report.yaml&app-version=${encodeURIComponent(appVersion)}&platform=${Platform.OS}&os-version=${Platform.Version}`;
+  const bugReportUrl = `https://github.com/Thesuperteacher/CthulhuFit/issues/new?assignees=&labels=bug&projects=&template=bug_report.yaml&app-version=${encodeURIComponent(appVersion)}&platform=${Platform.OS}&os-version=${Platform.Version}`;
 
   return (
     <FullHeightScrollView>
@@ -87,7 +87,7 @@ export default function Settings() {
         <List.Item
           onPress={() =>
             openUrl(
-              'https://github.com/LiamMorrow/LiftLog/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.md',
+              'https://github.com/Thesuperteacher/CthulhuFit/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.md',
             )
           }
           title={t('settings.feature_request.title')}
@@ -105,7 +105,7 @@ export default function Settings() {
         <List.Item
           onPress={() =>
             openUrl(
-              'https://github.com/LiamMorrow/LiftLog/issues/new?assignees=&labels=translation&projects=&template=translation-suggestion.md',
+              'https://github.com/Thesuperteacher/CthulhuFit/issues/new?assignees=&labels=translation&projects=&template=translation-suggestion.md',
             )
           }
           title={t('settings.translation.title')}
@@ -127,18 +127,18 @@ export default function Settings() {
           </Dialog.Title>
           <Dialog.Content>
             <Text>
-              LiftLog is an entirely open source app, licensed under the
+              CthulhuFit is an entirely open source app, licensed under the
               AGPL-3.0 license. You can find the source code on{' '}
               <Link
                 style={{ color: colors.primary, fontWeight: 'bold' }}
-                href="https://github.com/LiamMorrow/LiftLog"
+                href="https://github.com/Thesuperteacher/CthulhuFit"
               >
                 <Icon size={16} source={'share'} color={colors.primary} />
                 GitHub
               </Link>
               .
             </Text>
-            <Text>LiftLog is currently version {appVersion}</Text>
+            <Text>CthulhuFit is currently version {appVersion}</Text>
           </Dialog.Content>
           <Dialog.Actions>
             <Button onPress={() => setAppInfoOpen(false)}>

@@ -303,7 +303,7 @@ export default function Index() {
     >
       <Stack.Screen
         options={{
-          title: 'LiftLog',
+          title: 'CthulhuFit',
         }}
       />
       <MigrateToWeightUnitsWizard />
