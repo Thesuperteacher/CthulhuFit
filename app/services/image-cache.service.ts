@@ -3,7 +3,7 @@ import * as FileSystem from 'expo-file-system';
 import { Platform } from 'react-native';
 
 const BASE_URL = 'https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/';
-const CACHE_DIR = FileSystem.documentDirectory + 'images/';
+const CACHE_DIR = (FileSystem.documentDirectory ?? '') + 'images/';
 
 export class ImageCacheService {
 

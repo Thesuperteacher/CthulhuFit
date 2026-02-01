@@ -389,8 +389,9 @@ export default function SessionComponent(props: {
 
   // Calculate Target Time
   let timerEndTime: OffsetDateTime | undefined;
+  let baseRest: Duration | undefined;
   if (validTimerState) {
-    const baseRest = lastSetFailed
+    baseRest = lastSetFailed
       ? lastExercise.blueprint.restBetweenSets.failureRest
       : lastExercise.blueprint.restBetweenSets.minRest;
     timerEndTime = lastSetTime!.plus(baseRest).plusSeconds(timerExtensionSeconds);

@@ -22,12 +22,9 @@ class CatalogService {
 
   constructor() {
     this.exercises = exercisesData as CatalogExercise[];
-    this.exercisesMap = new Map(this.exercises.map(ex => [ex.id, ex.name === '3/4 Sit-Up' ? ex.id : ex.id])); // Basic map
-    // Re-mapping specifically to ensure ID consistency if needed, but the JSON has 'id'.
-    // Actually, let's just use the ID from the JSON.
     this.exercisesMap = new Map();
     this.exercises.forEach(ex => {
-        this.exercisesMap.set(ex.id, ex);
+      this.exercisesMap.set(ex.id, ex);
     });
   }
 
