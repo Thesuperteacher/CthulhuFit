@@ -11,6 +11,7 @@ import '@/utils/date-locale';
 import { KeyboardProvider } from 'react-native-keyboard-controller';
 import * as Sentry from '@sentry/react-native';
 import ServicesProvider from '@/components/smart/services-provider';
+import { ResponsiveContainer } from '@/components/layout/ResponsiveContainer';
 
 LogBox.ignoreLogs([
   /.*is not a valid icon name.*/,
@@ -36,22 +37,24 @@ export default Sentry.wrap(function RootLayout() {
           <SafeAreaProvider>
             <ServicesProvider>
               <AppThemeProvider>
-                <AppStateProvider>
-                  <SnackbarProvider>
-                    <Stack
-                      screenOptions={{
-                        headerShown: false,
-                        statusBarStyle:
-                          Platform.OS === 'android'
-                            ? colorScheme === 'dark'
-                              ? 'light'
-                              : 'dark'
-                            : undefined,
-                        gestureEnabled: false,
-                      }}
-                    />
-                  </SnackbarProvider>
-                </AppStateProvider>
+                <ResponsiveContainer>
+                  <AppStateProvider>
+                    <SnackbarProvider>
+                      <Stack
+                        screenOptions={{
+                          headerShown: false,
+                          statusBarStyle:
+                            Platform.OS === 'android'
+                              ? colorScheme === 'dark'
+                                ? 'light'
+                                : 'dark'
+                              : undefined,
+                          gestureEnabled: false,
+                        }}
+                      />
+                    </SnackbarProvider>
+                  </AppStateProvider>
+                </ResponsiveContainer>
               </AppThemeProvider>
             </ServicesProvider>
           </SafeAreaProvider>

@@ -14,16 +14,38 @@
       html,
       body {
         height: 100%;
+        margin: 0;
+        padding: 0;
       }
       /* These styles disable body scrolling if you are using <ScrollView> */
       body {
         overflow: hidden;
+        background-color: #1a1a2e; /* Dark background for outer area */
       }
       /* These styles make the root element full-height */
       #root {
         display: flex;
         height: 100%;
         flex: 1;
+      }
+      /* Responsive mobile-like container for desktop */
+      @media (min-width: 481px) {
+        body {
+          display: flex;
+          justify-content: center;
+          align-items: stretch;
+        }
+        #root {
+          max-width: 480px;
+          width: 100%;
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+      }
+      /* Light mode background */
+      @media (prefers-color-scheme: light) {
+        body {
+          background-color: #e0e0e0;
+        }
       }
     </style>
   </head>
