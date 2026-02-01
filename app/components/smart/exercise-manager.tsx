@@ -138,6 +138,7 @@ export default function ExerciseManager() {
       updateExercise({
         id: newId,
         exercise: {
+          id: newId,
           name: 'New exercise',
           category: '',
           equipment: null,
@@ -146,6 +147,7 @@ export default function ExerciseManager() {
           level: 'beginner',
           mechanic: null,
           muscles: [],
+          source: 'user',
         },
       }),
     );

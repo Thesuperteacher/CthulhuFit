@@ -46,7 +46,13 @@ export function ExerciseEditor(props: ExerciseEditorProps) {
   const exerciseIds = useAppSelector(selectExerciseIds);
   const bottomSheetRef = useRef<BottomSheet>(null);
   const selectExerciseFromSearch = (ex: ExerciseDescriptor) => {
-    updateExercise({ name: ex.name, notes: ex.instructions });
+    // Link to catalog exercise for image support
+    const catalogId = ex.source === 'catalog' ? ex.id : undefined;
+    updateExercise({ 
+      name: ex.name, 
+      notes: ex.instructions,
+      catalogExerciseId: catalogId,
+    });
     bottomSheetRef.current?.close();
   };
 

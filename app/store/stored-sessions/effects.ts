@@ -83,16 +83,17 @@ export function applyStoredSessionsEffects() {
       );
       dispatch(setStoredSessions(completedSessions));
 
-      const { exercises } = await import('../../assets/exercises.json');
+      const exercises = (await import('../../assets/data/exercises.json')).default;
       const alreadyAddedBuiltIns = JSON.parse(
         (await keyValueStore.getItem(addedBuiltInExerciseIdsStorageKey)) ??
           '[]',
       ) as string[];
       const builtInExercisesNotAlreadyAdded = exercises
-        .filter((x) => !alreadyAddedBuiltIns.includes(x.name))
+        .filter((x: { name: string }) => !alreadyAddedBuiltIns.includes(x.name))
         .reduce(
-          (a, b) => {
-            a[b.name] = {
+          (a: Record<string, ExerciseDescriptor>, b: { id: string; name: string; force: string | null; level: string; mechanic: string | null; equipment: string | null; category: string; instructions: string[]; primaryMuscles: string[]; secondaryMuscles: string[] }) => {
+            a[b.id] = {
+              id: b.id,
               name: b.name,
               force: b.force,
               level: b.level,
@@ -101,6 +102,7 @@ export function applyStoredSessionsEffects() {
               category: b.category,
               instructions: b.instructions.join('\n'),
               muscles: b.primaryMuscles.concat(b.secondaryMuscles),
+              source: 'catalog',
             };
             return a;
           },

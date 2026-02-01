@@ -20,6 +20,7 @@ import { WeightUnit } from '@/models/weight';
 import { TemporalComparer } from '@/models/comparers';
 
 export interface ExerciseDescriptor {
+  id: string;
   name: string;
   force: string | null;
   level: string;
@@ -28,6 +29,7 @@ export interface ExerciseDescriptor {
   muscles: string[];
   instructions: string;
   category: string;
+  source: 'catalog' | 'user';
 }
 
 export interface WeightMigrateableExercise {
