@@ -41,7 +41,6 @@ export function applySettingsEffects() {
       _,
       { cancelActiveListeners, dispatch, extra: { preferenceService } },
     ) => {
-      const start = performance.now();
       cancelActiveListeners();
 
       const [
@@ -134,10 +133,6 @@ export function applySettingsEffects() {
       dispatch(setIsHydrated(true));
       dispatch(initializeStoredSessionsStateSlice());
       dispatch(initializeCurrentSessionStateSlice());
-      const end = performance.now();
-      console.log(
-        `initializeSettingsStateSlice effect took ${(end - start).toFixed(2)}ms`,
-      );
     },
   );
 

@@ -64,7 +64,6 @@ export function addRemoteBackupEffects() {
       },
     ) => {
       cancelActiveListeners();
-      const start = performance.now();
       settings ??= getState().settings.remoteBackupSettings;
       const { endpoint, apiKey, includeFeedAccount } = settings;
 
@@ -158,10 +157,6 @@ export function addRemoteBackupEffects() {
           loading: () => null,
           notAsked: () => null,
         });
-        console.log(
-          `Calculated Hash ${hashString} in `,
-          performance.now() - start,
-        );
 
         if (
           !force &&

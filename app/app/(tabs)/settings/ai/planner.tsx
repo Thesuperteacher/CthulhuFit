@@ -368,7 +368,7 @@ async function presentPaywall(): Promise<boolean> {
       return true;
     }
   } catch (err) {
-    console.log('Failed to restore purchases', err, customer.originalAppUserId);
+    // Failed to restore purchases - non-critical
   }
   // Present paywall for current offering:
   const paywallResult: PAYWALL_RESULT = await RevenueCatUI.presentPaywall();
