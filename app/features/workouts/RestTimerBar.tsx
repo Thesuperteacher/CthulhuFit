@@ -72,27 +72,26 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingHorizontal: 16,
-        paddingTop: 12,
-        paddingBottom: 32, // Safe area
+        paddingHorizontal: 12,
+        paddingVertical: 8,
         borderTopWidth: 1,
         borderTopColor: '#333',
     },
     btnSmall: {
         backgroundColor: '#333',
-        paddingVertical: 12,
-        paddingHorizontal: 16,
-        borderRadius: 8,
-        minWidth: 60,
+        paddingVertical: 8,
+        paddingHorizontal: 12,
+        borderRadius: 6,
+        minWidth: 50,
         alignItems: 'center',
     },
     timerText: {
-        fontSize: 32,
+        fontSize: 24,
         fontWeight: 'bold',
         color: '#fff',
         fontVariant: ['tabular-nums'],
     },
     skipBtn: {
-        borderRadius: 8,
+        borderRadius: 6,
     }
 });
