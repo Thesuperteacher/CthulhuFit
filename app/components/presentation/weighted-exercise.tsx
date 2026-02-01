@@ -29,6 +29,7 @@ interface WeightedExerciseProps {
   ) => void;
   updateRpeForSet: (setIndex: number, rpe: number | undefined) => void;
   updateNotesForExercise: (notes: string) => void;
+  onAddSet: () => void;
   onOpenLink: () => void;
   onEditExercise: () => void;
   onRemoveExercise: () => void;
@@ -129,7 +130,7 @@ export default function WeightedExercise(props: WeightedExerciseProps) {
         })}
       </View>
 
-      <AddSetButton onPress={() => { }} />
+      <AddSetButton onPress={props.onAddSet} />
 
       <RpePickerSheet
         visible={rpeSheetVisible}

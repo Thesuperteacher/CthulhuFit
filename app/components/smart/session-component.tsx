@@ -1,5 +1,6 @@
 import {
   addExercise,
+  addSetToExercise,
   cycleExerciseReps,
   editExercise,
   notifySetTimer,
@@ -251,6 +252,11 @@ export default function SessionComponent(props: {
               exerciseIndex: index,
               setIndex,
               rpe
+            })
+          }
+          onAddSet={() =>
+            dispatch(addSetToExercise, {
+              exerciseIndex: index,
             })
           }
           isReadonly={isReadonly}

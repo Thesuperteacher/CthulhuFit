@@ -367,6 +367,26 @@ const currentSessionSlice = createSlice({
       },
     ),
 
+    addSetToExercise: targetedSessionAction(
+      (
+        session,
+        action: { exerciseIndex: number },
+      ) => {
+        const exercise = session.recordedExercises[action.exerciseIndex];
+        if (exercise.type !== 'WeightedRecordedExercise') {
+          return;
+        }
+        // Get the weight from the last set, or use default
+        const lastSet = exercise.potentialSets[exercise.potentialSets.length - 1];
+        const newSet = {
+          type: 'PotentialSet' as const,
+          set: undefined,
+          weight: lastSet?.weight ?? { value: '0', unit: 'kg' as const },
+        };
+        exercise.potentialSets.push(newSet);
+      },
+    ),
+
     setCurrentSession: (
       state,
       action: PayloadAction<{
@@ -534,6 +554,7 @@ export const {
   removeExercise,
   editExercise,
   addExercise,
+  addSetToExercise,
   setExerciseReps,
   updateRpeForSet,
   updateWeightForSet,
